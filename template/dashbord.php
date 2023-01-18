@@ -3,11 +3,13 @@
     
 <body class="m-2">
     <div class="d-flex justify-content-between">
-        <h2>NM Blog  | <span class="fs-5">Home</span></h2>
+        <h2 style="color: rgb(27, 33, 54);">NM Blog  | <span class="fs-5" style="color:rgb(245, 35, 98)">Home</span></h2>
 
 
         <span class="material-symbols-outlined m-2">
-            calendar_month
+      
+favorite
+</span>
         </span>
     </div>
    
@@ -18,9 +20,9 @@
     <div class=" d-flex justify-content-center">
         <div class="input-group mb-3 w-75 ">
             <input type="text" class="form-control" placeholder="search" aria-describedby="basic-addon2">
-            <span class="input-group-text" id="basic-addon2"><span class="material-symbols-outlined">
+            <span class="input-group-text text-white w-25" id="basic-addon2" style="background:rgb(245, 35, 98);"><span class="material-symbols-outlined">
                     search
-                </span></span>
+                </span>Search</span>
         </div>
     </div>
     <div class=" d-flex justify-content-center">
@@ -38,8 +40,8 @@
 
     </div>
     <div class=" d-flex justify-content-center flex-wrap p-3">
-        <div class="card m-2 shadow bg-body  " style="width: 15rem;">
-            <div class="card-body">
+        <div class="card m-2 shadow  " style="width: 15rem; background:rgb(232, 147, 170);">
+            <div class="p-2" >
                 <span class="material-symbols-outlined">
                     article
                     </span>
@@ -66,6 +68,49 @@
             </div>
         </div>
 
+    </div>
+    
+    <div class="p-3">
+    <table class="table shadow">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Writer</th>
+      <th scope="col">Text </th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php 
+    $connection = new Db;
+    $conn = $connection->connection();
+   $profile =new Article($conn);
+   $data = $profile->displayArticle();
+   
+   foreach ($data as $row ) {
+   ?>
+    <tr>
+      <th scope="row "><button class="btn"> <?=  $row['id']; ?></button> </th>
+      <td><?=  $row['title']; ?></td>
+      <td><?=  $row['writer']; ?></td>
+      <td><?=  $row['text']; ?></td>
+      <td >
+      <button type="button" class="btn btn-success m-1"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  Update
+</button><button type="button" class="btn btn-danger m-1"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  Delete
+</button>
+      </td>
+    </tr>
+
+<?php }?>
+    
+     
+  </tbody>
+</table>
     </div>
     <div class="d-flex justify-content-center flex-wrap p-3">
         <div>
@@ -186,4 +231,5 @@
             </div>
         </div>
     </div>
+   
    <?php include 'footer.php';?>

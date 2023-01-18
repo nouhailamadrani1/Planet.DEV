@@ -1,3 +1,10 @@
+<?php
+   include_once '../function.php/connectiondb.php';
+   require_once '../function.php/class.php';
+
+    ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

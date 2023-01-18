@@ -3,7 +3,7 @@
     
     <body class="m-2">
         <div class="d-flex justify-content-between">
-            <h2>NM Blog  | <span class="fs-5">Statistical</span></h2>
+            <h2>NM Blog  | <span class="fs-5" style="color:rgb(245, 35, 98)">Statistical</span></h2>
     
     
             <span class="material-symbols-outlined m-2">
