@@ -1,6 +1,6 @@
 <?php
-   include_once '../function.php/connectiondb.php';
-   require_once '../function.php/class.php';
+   include_once '../script/script.php';
+   
 
     ?>
 
@@ -15,12 +15,15 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+       
+    
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style/style.css">
+        <script src="jquery.js"></script>
+<script src="parsley.min.js"></script>
 
     <title> Dashboard | Admin </title>
 </head>

@@ -23,7 +23,7 @@ class login
                     $data = $sql->fetch();
                     $_SESSION['id'] = $data['id'];
                     $_Session['id'] = true;
-                    
+
 
                     header('location:../template/dashbord.php');
                 } else {
@@ -37,23 +37,25 @@ class login
     }
 }
 
-class admin {
+class admin
+{
     public $firstName;
     public $lastName;
     public $email;
     public $age;
-    protected $nm;
-    function __construct($nm)
+    protected $conn;
+    function __construct($conn)
     {
-        $this->nm = $nm;
+        $this->conn = $conn;
     }
 
-    public function displayInfoAdmin(){
+    public function displayInfoAdmin()
+    {
 
         if (isset($_SESSION['id'])) {
-              $id=$_SESSION['id'];
-           
-            $sql = $this->nm->prepare("SELECT * FROM `admin` WHERE id = :id ");
+            $id = $_SESSION['id'];
+
+            $sql = $this->conn->prepare("SELECT * FROM `admin` WHERE id = :id ");
 
             $sql->execute(array('id' => $id));
 
@@ -70,58 +72,90 @@ class admin {
                 $_SESSION['email'] = $data['email'];
                 $_Session['email'] = true;
                 // var_dump( $_SESSION['email']);
-              
-                
 
+
+
+            }
         }
-
-
     }
-}
+    public static function countAdmins()
+    {
+        $connection = new Db;
+        $conn = $connection->connection();
+        $sql = ("SELECT * FROM admin ");
+        $exec = $conn->query($sql);
 
+        $res = $exec->rowCount();
+
+        return $res;
+    }
 }
 
 $connection = new Db;
 $conn = $connection->connection();
-$profile =new admin($conn);
+$profile = new admin($conn);
 $profile->displayInfoAdmin();
 
 
-class Article {
-   
-    protected $nm;
+class Article
+{
 
-    function __construct($nm)
-    {
-        $this->nm = $nm;
+    protected $id;
+    protected $title;
+    protected $text;
+
+
+
+    function __construct($newTitle, $newText,$newId = null)
+    {   
+        $this->id = $newId;
+        $this->title = $newTitle;
+        $this->text = $newText;
     }
-    public function displayArticle(){
-        $sql = $this->nm->prepare("SELECT * FROM `article`;");
-        $result = $sql->execute();
-        $data= $sql->fetchAll(PDO::FETCH_ASSOC);
-       
-        return $data ;
-       
-     
-            }
-            }
-            
-        
+    public static function displayArticle()
+    {
+        $connection = new Db;
+        $conn = $connection->connection();
+        $sql = $conn->prepare("SELECT * FROM `article`;");
+        $sql->execute();
+        $data = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-    
-        
-    // public function deleteArticle(){
+        return $data;
+    }
 
 
-    // }
-
-    // public function updateArticle(){
-
-    // }
-
-$connection = new Db;
- $conn = $connection->connection();
-$profile =new Article($conn);
-$profile->displayArticle();
+    public static function deleteArticle($id)
+    {
 
 
+        $connection = new Db;
+        $conn = $connection->connection();
+        $sql = $conn->prepare("DELETE FROM `article` WHERE id= ?");
+        $result = $sql->execute([$id]);
+        return $result;
+    }
+
+    public function addArticle()
+    {
+
+        $connection = new Db;
+        $conn = $connection->connection();
+        $sql = $conn->prepare("INSERT INTO article (title,text) VALUES (?,?)");
+        $sql->execute([
+            $this->title,
+            $this->text
+        ]);
+    }
+
+    public function updateArticle()
+    { 
+        $connection = new Db;
+        $conn = $connection->connection();
+        $sql = $conn->prepare("UPDATE article set title = ?, text = ? where id=?");
+        $sql->execute([
+            $this->title,
+            $this->text,
+            $this->id
+        ]);
+    }
+}

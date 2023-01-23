@@ -24,11 +24,11 @@ require_once '../function.php/class.php';
     $nm->login();
     ?>
 
-      <form  action="" method="POST" class="  p-4 ">
+      <form  action="" method="POST" class="  p-4 " data-parsley-validate>
         <h4 class="pe-4 " style="color:rgb(245, 35, 98) ;">Login</h4>
         <div class="my-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" name="email" class="form-control shadow" aria-describedby="emailHelp">
+          <input type="email" name="email" class="form-control shadow" aria-describedby="emailHelp" data-parsley-type="email">
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
@@ -43,3 +43,4 @@ require_once '../function.php/class.php';
   </div>
 
   <?php include 'footer.php'; ?>
+  

@@ -20,5 +20,3 @@
             echo "Connection failed: " . $e->getMessage();
         }
     }}
-                $db= new Db();
-                $db->connection();
