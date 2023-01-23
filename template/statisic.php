@@ -17,7 +17,7 @@
       
         </div>
         </div>
-    <div class=" d-flex justify-content-center flex-wrap p-3">
+        <div class=" d-flex justify-content-center flex-wrap p-3">
         <div class="card m-2 shadow  " style="width: 15rem; background:rgb(232, 147, 170);">
             <div class="p-2" >
                 <span class="material-symbols-outlined">
@@ -27,7 +27,7 @@
                 <p><?php cuntArticles(); ?></p>
             </div>
         </div>
-        <div class="card m-2  shadow bg-body " style="width: 15rem;">
+        <div class="card m-2  shadow  " style="width: 15rem; background: rgb(190, 150, 242);">
             <div class="card-body">
                 <span class="material-symbols-outlined">
                     person
@@ -36,7 +36,7 @@
                 <p><?php cuntAdmins(); ?></p>
             </div>
         </div>
-        <div class="card m-2  shadow bg-body " style="width: 15rem;">
+        <div class="card m-2  shadow  " style="width: 15rem;background:rgb(157, 215, 235)">
             <div class="card-body">
                 <span class="material-symbols-outlined">
                     history_edu
@@ -47,6 +47,7 @@
         </div>
 
     </div>
+    
        
   
        <?php include 'footer.php';?>

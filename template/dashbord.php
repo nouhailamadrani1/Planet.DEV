@@ -1,5 +1,12 @@
 
-<?php  include 'head.php';?>
+
+<?php 
+include 'head.php';
+// if(isset($_POST[ $_SESSION['id']])) {
+    
+ ?>
+
+
     
 <body class="m-2">
     <div class="d-flex justify-content-between">
@@ -32,9 +39,9 @@ favorite
     </div>
 
         <div  class=" d-flex justify-content-center  ">
-        <button type="button" class="btn btn-close-white btn-sm "><br>
+        <button type="button" class="btn btn-close-white btn " ><br>
 
-        <a href="add.php" >    <span class="material-symbols-outlined text-success">
+        <a href="add.php" style="width:30px" ><span class="material-symbols-outlined text-success w-100 " >
               add_circle
                 </span></a>
         </button>
@@ -50,7 +57,7 @@ favorite
                 <p><?php cuntArticles(); ?></p>
             </div>
         </div>
-        <div class="card m-2  shadow bg-body " style="width: 15rem;">
+        <div class="card m-2  shadow  " style="width: 15rem; background: rgb(190, 150, 242);">
             <div class="card-body">
                 <span class="material-symbols-outlined">
                     person
@@ -59,7 +66,7 @@ favorite
                 <p><?php cuntAdmins(); ?></p>
             </div>
         </div>
-        <div class="card m-2  shadow bg-body " style="width: 15rem;">
+        <div class="card m-2  shadow  " style="width: 15rem;background:rgb(157, 215, 235)">
             <div class="card-body">
                 <span class="material-symbols-outlined">
                     history_edu
@@ -70,8 +77,8 @@ favorite
         </div>
 
     </div>
-    
-    <div class="p-3">
+    <h4 class="p-3"> Article </h4>
+    <div class="p-3" style="overflow-x:auto;">
     <table class="table shadow">
   <thead>
     <tr>
@@ -87,79 +94,10 @@ favorite
   displayArticles();
     ?>
     
-     
   </tbody>
 </table>
     </div>
-    <div class="d-flex justify-content-center flex-wrap p-3">
-        <div>
-            <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="true" style="width: 280px;
-        height: 400px;">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner ">
-                    <div class="carousel-item active">
-                        <img src="../img/profile.jpg" class="d-block w-100" alt="...">
-                        <h5>Title : how are you ?</h5>
-                        <p> I'm good</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../img/profile.jpg" class="d-block w-100" alt="...">
-                        <h5>Title : how are you ?</h5>
-                        <p> I'm good</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../img/profile.jpg" class="d-block w-100" alt="...">
-                        <h5>Title : how are you ?</h5>
-                        <p> I'm good</p>
-                    </div>
-
-
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-        <div class="wrapper">
-            <header>
-                <p class="current-date"></p>
-                <div class="icons">
-                    <span id="prev" class="material-symbols-rounded">chevron_left</span>
-                    <span id="next" class="material-symbols-rounded">chevron_right</span>
-                </div>
-            </header>
-            <div class="calendar">
-                <ul class="weeks">
-                    <li>Sun</li>
-                    <li>Mon</li>
-                    <li>Tue</li>
-                    <li>Wed</li>
-                    <li>Thu</li>
-                    <li>Fri</li>
-                    <li>Sat</li>
-                </ul>
-                <ul class="days"></ul>
-            </div>
-        </div>
-
-    </div>
    
-
-
                 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -189,10 +127,7 @@ favorite
     </div>
   </div>
 </div>
-               
-
-
-    
    
    <?php include 'footer.php';?>
 <script src="../script/fullUpdate.js"></script>
+<?php 

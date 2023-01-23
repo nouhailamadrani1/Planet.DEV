@@ -3,10 +3,10 @@ include_once 'connectiondb.php';
 
 class login
 {
-    protected $nm;
-    function __construct($nm)
+    protected $conn;
+    function __construct($conn)
     {
-        $this->nm = $nm;
+        $this->conn = $conn;
     }
     function login()
     {
@@ -15,7 +15,7 @@ class login
             $password = addslashes(strip_tags($_POST['password']));
             if (!empty($email) and !empty($password)) {
 
-                $sql = $this->nm->prepare("SELECT * FROM `admin` WHERE email = :email AND password = :password");
+                $sql = $this->conn->prepare("SELECT * FROM `admin` WHERE email = :email AND password = :password");
 
                 $sql->execute(array('email' => $email, 'password' => $password));
 
@@ -71,9 +71,7 @@ class admin
                 $_Session['age'] = true;
                 $_SESSION['email'] = $data['email'];
                 $_Session['email'] = true;
-                // var_dump( $_SESSION['email']);
-
-
+               
 
             }
         }

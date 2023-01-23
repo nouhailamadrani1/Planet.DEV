@@ -12,7 +12,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 
             </div>
-            <div class="offcanvas-body">
+            <div class="offcanvas-body" >
                 <div>
                     <ul class="list-group list-group-flush">
                         <li class=" m-2 list-group-item"><span class=" p-2 material-symbols-outlined">
@@ -28,9 +28,9 @@
                         <li class=" m-2 list-group-item"><span class=" p-2 material-symbols-outlined">
                                 auto_graph
                             </span><a href="statisic.php" class="text-decoration-none text-black">Statistical</a></li>
-                        <li class=" m-2 list-group-item"><span class=" p-2 material-symbols-outlined">
+                        <li class=" m-2 list-group-item "><span class=" p-2 material-symbols-outlined"  style="color:rgb(245, 35, 98)">
                                 logout
-                            </span><a href="" class="text-decoration-none text-black">Logout</a></li>
+                            </span><a href="../script/script.php?logout" class="text-decoration-none "  style="color:rgb(245, 35, 98)">Logout</a></li>
 
                     </ul>
                 </div>

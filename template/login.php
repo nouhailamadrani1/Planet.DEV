@@ -11,25 +11,27 @@ require_once '../function.php/class.php';
    height: 400px;">
       <div>
         <h4 class="pe-4 text-center" style="color:rgb(245, 35, 98) ;">You Welcome</h4>
-        <p class="text-white text-center">une application web pour tester les connaissances des candidats au niveau PHP</p>
+        <p class="text-white text-center">NM  is a community of developers who come together to discover and explore development news.</p>
       </div>
     </div>
 
     <div class="     d-flex justify-content-center align-items-center " style="width: 350px ;
    height: 400px;">
-   <?php
+  
+
+      <form  action="" method="POST" class="p-4 ">
+        <h3 class="pe-4 " style="color:rgb(245, 35, 98) ;">Login</h4>
+        <h6 style="color:rgb(245, 35, 90) ;">
+        <?php
     $connection = new Db;
     $conn = $connection->connection();
-    $nm =new login($conn);
-    $nm->login();
-    ?>
-
-      <form  action="" method="POST" class="  p-4 " data-parsley-validate>
-        <h4 class="pe-4 " style="color:rgb(245, 35, 98) ;">Login</h4>
+    $login =new login($conn);
+    $login->login();
+    ?></h6>
         <div class="my-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" name="email" class="form-control shadow" aria-describedby="emailHelp" data-parsley-type="email">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <input type="email" name="email" class="form-control shadow" aria-describedby="emailHelp" data-parsley-type="email" >
+          
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
